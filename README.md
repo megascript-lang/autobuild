@@ -3,7 +3,14 @@ Autobuild automatically builds programs on Unix-like systems and Windows in thei
 
 # Syntax
 
-### If statements
+### Variables!
+
+```
+VAR VARIABLE1 = ls
+COMMAND VARIABLE1
+```
+
+### If statements!
 
 ```
 IF OS = FreeBSD
