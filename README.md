@@ -1,6 +1,8 @@
 # Autobuild
 Autobuild automatically generates build scripts for programs on Unix-like systems and Windows in their native shells!
 
+To use it, simply make a file in your current working directory called "Autobuild"
+
 Example usage: https://www.youtube.com/watch?v=QNtPEdqj7dU
 
 # Syntax
