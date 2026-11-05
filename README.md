@@ -1,5 +1,6 @@
 # Autobuild
 Autobuild automatically generates build scripts for programs on Unix-like systems and Windows in their native shells!
+Example usage: https://www.youtube.com/watch?v=QNtPEdqj7dU
 
 # Syntax
 
