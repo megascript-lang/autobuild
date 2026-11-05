@@ -38,10 +38,15 @@ save="0"
 random_func() {
 	if [ "$os" = "FreeBSD" ]; then
 		echo "$(jot -r 1 0 65535)"
-	elif [ "$os" = "OpenBSD" ]; then
+	elif [ "$os" = "OpenBSD" ] || [ "$os" = "Haiku" ] || [ "$os" = "NetBSD" ]; then
 		echo "$(od -An -N2 -tu2 /dev/urandom)"
 	elif [ "$os" = "Linux" ]; then
 		echo "$RANDOM"
+	elif [ "$os" = "SunOS" ]; then
+		set "$(/usr/xpg4/bin/od -A n -N 2 -t u1 /dev/urandom)"
+		echo "$(($1 * 256 + $2))"
+	else
+		seed=$(($seed + 100)); awk -v seed=$seed 'BEGIN { srand(seed); print int(rand() * 65536) }'
 	fi
 }
 
