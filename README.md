@@ -22,9 +22,11 @@ Autobuild has conditional branches!
 
 ```
 IF OS = FreeBSD
-VAR FIRST_COMMAND = echo hi!
+VAR FIRST_COMMAND = echo "hi!"
 ELSEIF OS = Windows_NT
 VAR FIRST_COMMAND = echo(hi!
+ELSE
+VAR FIRST_COMMAND = echo "hi! wait... what os is this? O.o"
 END
 ```
 
