@@ -39,7 +39,7 @@ random_func() {
 	if [ "$os" = "FreeBSD" ]; then
 		echo "$(jot -r 1 0 65535)"
 	elif [ "$os" = "OpenBSD" ] || [ "$os" = "Haiku" ] || [ "$os" = "NetBSD" ]; then
-		echo "$(od -An -N2 -tu2 /dev/urandom)"
+		echo "$(od -An -N2 -tu2 /dev/urandom)" | sed 's/ //g'
 	elif [ "$os" = "Linux" ]; then
 		echo "$RANDOM"
 	elif [ "$os" = "SunOS" ]; then
