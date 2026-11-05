@@ -46,7 +46,8 @@ random_func() {
 		set "$(/usr/xpg4/bin/od -A n -N 2 -t u1 /dev/urandom)"
 		echo "$(($1 * 256 + $2))"
 	else
-		seed=$(($seed + 100)); awk -v seed=$seed 'BEGIN { srand(seed); print int(rand() * 65536) }'
+		seed=$(($seed + 100))
+		echo "$(awk -v seed=$seed 'BEGIN { srand(seed); print int(rand() * 65536) }')"
 	fi
 }
 
